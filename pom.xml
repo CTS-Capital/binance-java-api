@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.binance.api</groupId>
-  <artifactId>binance-java-api</artifactId>
+  <artifactId>binance-api-client</artifactId>
   <version>1.0.1</version>
   <licenses>
     <license>
@@ -53,7 +53,7 @@
     <repository>
       <id>github</id>
       <name>GitHub OWNER Apache Maven Packages</name>
-      <url>https://maven.pkg.github.com/ctscapital/binance-java-api</url>
+      <url>https://maven.pkg.github.com/ctscapital</url>
     </repository>
 
   </distributionManagement>

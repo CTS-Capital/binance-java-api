@@ -32,6 +32,7 @@ public class BinanceApiServiceGenerator {
         Dispatcher dispatcher = new Dispatcher();
         dispatcher.setMaxRequestsPerHost(500);
         dispatcher.setMaxRequests(500);
+        dispatcher.setMaxRequestsPerHost(25);
         sharedClient = new OkHttpClient.Builder()
                 .dispatcher(dispatcher)
                 .pingInterval(20, TimeUnit.SECONDS)

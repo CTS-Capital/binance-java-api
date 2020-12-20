@@ -5,10 +5,7 @@ import com.binance.api.client.config.BinanceApiConfig;
 import com.binance.api.client.constant.BinanceApiConstants;
 import com.binance.api.client.exception.BinanceApiException;
 import com.binance.api.client.security.AuthenticationInterceptor;
-import okhttp3.Dispatcher;
-import okhttp3.OkHttpClient;
-import okhttp3.RequestBody;
-import okhttp3.ResponseBody;
+import okhttp3.*;
 import org.apache.commons.lang3.StringUtils;
 import retrofit2.Call;
 import retrofit2.Converter;
@@ -35,6 +32,9 @@ public class BinanceApiServiceGenerator {
         sharedClient = new OkHttpClient.Builder()
                 .dispatcher(dispatcher)
                 .pingInterval(5, TimeUnit.SECONDS)
+                .connectTimeout(1, TimeUnit.SECONDS)
+                .readTimeout(1, TimeUnit.SECONDS)
+                .connectionPool(new ConnectionPool(500, 5, TimeUnit.MINUTES))
                 .build();
     }
 
